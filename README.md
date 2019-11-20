@@ -1,35 +1,31 @@
-# YOLO_v2_tiny
+# IPS-Orange_Lemon_Classification
 ----
 # Introduction
 ----
-This is the YOLO V2 tiny model implemented on keras.
-# Requirement
+Using Yolo tiny v2 to classify Orange and Lemon on conveyor with Raspberry pi 3
+
+# Source
 ----
-Using [this script](https://bitbucket.org/minhtan97/yolo_v2_tiny/src/master/requirement.txt) to install indispensable libs:
-```
-sudo chmod +x requirement.txt
-./requirement.txt
-```
+Yolo tiny v2 at [this script](https://bitbucket.org/minhtan97/yolo_v2_tiny/src/master/)
+
 # Usage
 ----
-## 1. Training:
-Add training data (images and announcements) to the data folder. Then using [this script](https://bitbucket.org/minhtan97/yolo_v2_tiny/src/master/train.py) to train the model. The weight after training is stored in the weight folder.
+## 1.Download weight:
+Download [this weight](https://drive.google.com/open?id=16MCzx5yiEsEt1Yvka1-4mzRBacx0qav3) and extract file in "IPS-Orange_Lemon_Classification" folder. You will have weight folder
+
+## 2.Test code:
+Run camera.py code in your PC (Raspberry, window)
 ```
-python3 train.py
+Raspberry:      python3 camera.py
+Windows:        python camera.py
 ```
-## 2. Test image:
+## 3.Setup:
+I you Raspberry to classify Orange and Lemon, using servo to put Object out of the conveyor
 ```
-python3 test.py <IMAGE_PATH>
+Servo 1 --> GPIO 4
+Servo 2 --> GPIO 27
 ```
-## 3. Test on camera:
+## 4.Run model:
 ```
-python3 camera.py
+python3 servo_control.py
 ```
-# References
-----
-## Documentations
-* [You Only Look Once: Unified, Real-Time Object Detection](https://arxiv.org/pdf/1506.02640)
-* [YOLO 9000](https://arxiv.org/pdf/1612.08242)
-* [Understanding YOLO](https://hackernoon.com/understanding-yolo-f5a74bbc7967)
-* [YOLO tutorial](https://trungthanhnguyen0502.github.io/computer%20vision/2018/12/10/yolo_tutorial-2-yolo2-algorithms/)
-* [A Comprehensive Guide To Object Detection Using YOLO Framework](https://medium.com/@pratheesh.27998/object-detection-part1-4dbe5147ad0a)
